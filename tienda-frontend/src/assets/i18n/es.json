@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "productos": "Productos",
+    "facturas": "Facturas",
+    "adminProductos": "Admin Productos",
+    "iniciarSesion": "Iniciar Sesión",
+    "registrarse": "Registrarse",
+    "cerrarSesion": "Cerrar Sesión",
+    "carrito": "Carrito"
+  },
+  "home": {
+    "titulo": "Tu Tienda de Tecnología de Confianza",
+    "subtitulo": "Componentes, ordenadores y periféricos de calidad al mejor precio",
+    "verProductos": "Ver productos",
+    "componentes": "Componentes",
+    "ordenadores": "Ordenadores",
+    "perifericos": "Periféricos",
+    "destacados": "Garantía 3 años · Envío gratis +50€ · Soporte 24/7"
+  },
+  "productos": {
+    "titulo": "Todos los productos",
+    "subtitulo": "Explora todos los productos disponibles de la tienda.",
+    "categoria": {
+      "componentes": "Componentes",
+      "ordenadores": "Ordenadores",
+      "perifericos": "Periféricos"
+    },
+    "añadirAlCarrito": "Añadir al carrito",
+    "stock": "Stock",
+    "precio": "Precio",
+    "tipo": "Tipo",
+    "iniciaSesionRequerido": "Tienes que iniciar sesión para poder ver esta sesión.",
+    "irALogin": "Ir a login",
+    "noProductos": "No hay productos disponibles todavia."
+  },
+  "productoDetalle": {
+    "volver": "Volver a productos",
+    "añadirAlCarrito": "Añadir al carrito",
+    "descripcion": "Descripción",
+    "tipo": "Tipo",
+    "stock": "Stock",
+    "precio": "Precio",
+    "unidades": "unidades",
+    "cargando": "Cargando..."
+  },
+  "cart": {
+    "titulo": "Tu Carrito de Compras",
+    "vacío": "Tu carrito está vacío",
+    "mensajeVacío": "¡Parece que aún no has añadido nada al carrito!",
+    "explorarProductos": "Explorar Productos",
+    "volverProductos": "Volver a productos",
+    "producto": "Producto",
+    "precioUnitario": "Precio/u",
+    "cantidad": "Cantidad",
+    "subtotal": "Subtotal",
+    "acciones": "Acciones",
+    "eliminar": "Eliminar",
+    "resumen": "Resumen de Compra",
+    "totalItems": "Total items",
+    "totalPrecio": "Total",
+    "envío": "Envío",
+    "gratis": "GRATIS",
+    "finalizarPedido": "Finalizar Pedido",
+    "seguirComprando": "Seguir Comprando"
+  },
+  "login": {
+    "titulo": "Iniciar Sesión",
+    "usuario": "Usuario",
+    "contraseña": "Contraseña",
+    "iniciarSesion": "Iniciar Sesión",
+    "noTienesCuenta": "¿No tienes cuenta?",
+    "registrate": "Regístrate aquí",
+    "subtitulo": "Ingresa tus credenciales para continuar",
+    "ejemploUsuario": "Ej: admin",
+    "placeholderContraseña": "Tu contraseña"
+  },
+  "register": {
+    "titulo": "Crear Cuenta",
+    "nombre": "Nombre",
+    "dni": "DNI",
+    "pais": "País",
+    "ciudad": "Ciudad",
+    "numCalle": "Número de calle",
+    "usuario": "Usuario",
+    "contraseña": "Contraseña",
+    "registrarse": "Registrarse",
+    "yaTienesCuenta": "¿Ya tienes cuenta?",
+    "iniciaSesion": "Inicia sesión aquí",
+    "subtitulo": "Únete a nuestra tienda de informática"
+  },
+  "facturas": {
+    "titulo": "Mis Facturas",
+    "noHayFacturas": "No tienes facturas aún",
+    "codFactura": "Cod. Factura",
+    "fecha": "Fecha",
+    "formaPago": "Forma de pago",
+    "pedido": "Pedido",
+    "importe": "Importe",
+    "verDetalle": "Ver detalle"
+  },
+  "adminProductos": {
+    "titulo": "Gestión de Productos",
+    "nuevoProducto": "Nuevo Producto",
+    "editarProducto": "Editar Producto",
+    "id": "ID",
+    "imagen": "Imagen",
+    "descripcion": "Descripción",
+    "tipo": "Tipo",
+    "stock": "Stock",
+    "precio": "Precio",
+    "acciones": "Acciones",
+    "guardar": "Guardar",
+    "cancelar": "Cancelar",
+    "editar": "Editar",
+    "eliminar": "Eliminar",
+    "confirmarEliminar": "¿Seguro que quieres eliminar este producto?",
+    "seleccionarImagen": "Seleccionar imagen",
+    "categoria": "Categoría"
+  },
+  "notificaciones": {
+    "productoAñadido": "Producto añadido al carrito",
+    "stockInsuficiente": "Stock insuficiente para este producto",
+    "pedidoRealizado": "Pedido realizado con exito",
+    "errorPedido": "No se pudo completar el pedido"
+  },
+  "sidebar": {
+    "componentes": "Componentes",
+    "ordenadores": "Ordenadores",
+    "perifericos": "Periféricos",
+    "placaBase": "Placa Base",
+    "tarjetaGrafica": "Tarjeta Gráfica",
+    "procesador": "Procesador",
+    "discoDuro": "Disco Duro",
+    "refrigeracion": "Refrigeración",
+    "ram": "RAM",
+    "torreCaja": "Torre/Caja PC",
+    "fuenteAlimentacion": "Fuente de Alimentación",
+    "pcSobremesa": "PC Sobremesa",
+    "portatil": "Portátil",
+    "monitor": "Monitor",
+    "teclado": "Teclado",
+    "raton": "Ratón"
+  },
+  "footer": {
+    "derechosReservados": "© 2026 Tienda de Informática. Todos los derechos reservados."
+  },
+  "error404": {
+    "titulo": "404 - Página no encontrada",
+    "mensaje": "Lo sentimos, la página que buscas no existe.",
+    "volverInicio": "Volver al inicio"
+  },
+  "forbidden": {
+    "titulo": "403 - Acceso Denegado",
+    "mensaje": "Lo sentimos, no tienes permisos para acceder a esta página.",
+    "volverInicio": "Volver al inicio"
+  }
+}

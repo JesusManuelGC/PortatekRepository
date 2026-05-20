@@ -1,0 +1,52 @@
+<div class="container my-5 py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card tarjeta-login shadow-lg border-0 rounded-4 overflow-hidden">
+        <div class="encabezado-tarjeta-login text-center py-4">
+          <h3 class="mb-0 fw-bold">{{ 'login.titulo' | translate }}</h3>
+          <p class="small mb-0 subtitulo-login">{{ 'login.subtitulo' | translate }}</p>
+        </div>
+        <div class="card-body p-5">
+          <form (ngSubmit)="onLogin()">
+            <div class="mb-4">
+              <label for="username" class="form-label fw-bold small text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'login.usuario' | translate }}</label>
+              <div class="input-group">
+                <span class="input-group-text border-0"><i class="bi bi-person"></i></span>
+                <input type="text" id="username" class="form-control border-0" [placeholder]="'login.ejemploUsuario' | translate" [(ngModel)]="username" name="username" required>
+              </div>
+            </div>
+            <div class="mb-5">
+              <label for="password" class="form-label fw-bold small text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'login.contraseña' | translate }}</label>
+              <div class="input-group">
+                <span class="input-group-text border-0"><i class="bi bi-lock"></i></span>
+                <input type="password" id="password" class="form-control border-0" [placeholder]="'login.placeholderContraseña' | translate" [(ngModel)]="password" name="password" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm">
+              <span *ngIf="!loading">{{ 'login.iniciarSesion' | translate }}</span>
+              <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"></span>
+            </button>
+          </form>
+          
+          <div class="mt-4 text-center">
+            <div class="d-flex align-items-center justify-content-center mb-3">
+              <div style="height: 1px; background-color: rgba(255,255,255,0.1); width: 100%;"></div>
+              <span class="mx-3 small text-muted">O</span>
+              <div style="height: 1px; background-color: rgba(255,255,255,0.1); width: 100%;"></div>
+            </div>
+            <button type="button" (click)="loginWithGithub()" class="btn btn-dark w-100 py-3 fw-bold rounded-3 shadow-sm d-flex align-items-center justify-content-center" style="background-color: #24292e; border: 1px solid #24292e;">
+              <i class="bi bi-github me-2 fs-5"></i> Iniciar sesión con GitHub
+            </button>
+          </div>
+
+          <div class="text-center mt-4">
+            <p class="small text-muted">{{ 'login.noTienesCuenta' | translate }} <a routerLink="/register" class="fw-bold text-decoration-none">{{ 'login.registrate' | translate }}</a></p>
+          </div>
+          <div *ngIf="error" class="alert alert-danger mt-4 rounded-3 small">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container my-5 py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card tarjeta-login shadow-lg border-0 rounded-4 overflow-hidden">
+        <div class="encabezado-tarjeta-login text-white text-center py-4">
+          <h3 class="mb-0 fw-bold">{{ 'register.titulo' | translate }}</h3>
+          <p class="small text-white-50 mb-0">{{ 'register.subtitulo' | translate }}</p>
+        </div>
+        <div class="card-body p-5">
+          <form (ngSubmit)="onRegister()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.usuario' | translate }}</label>
+                <input type="text" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.username" name="username" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.contraseña' | translate }}</label>
+                <input type="password" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.password" name="password" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.nombre' | translate }}</label>
+              <input type="text" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.nombre" name="nombre" required>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.dni' | translate }}</label>
+                <input type="text" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.dni" name="dni" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.pais' | translate }}</label>
+                <input type="text" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.pais" name="pais" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.ciudad' | translate }}</label>
+                <input type="text" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.ciudad" name="ciudad" required>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label class="form-label small fw-bold text-white text-uppercase" style="letter-spacing: 0.5px;">{{ 'register.numCalle' | translate }}</label>
+                <input type="text" class="form-control border-0 rounded-3 py-2" [(ngModel)]="userData.numCalle" name="numCalle" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm">
+              <span *ngIf="!loading">{{ 'register.registrarse' | translate }}</span>
+              <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"></span>
+            </button>
+          </form>
+          <div class="text-center mt-4">
+            <p class="small text-muted">{{ 'register.yaTienesCuenta' | translate }} <a routerLink="/login" class="text-primary fw-bold text-decoration-none">{{ 'register.iniciaSesion' | translate }}</a></p>
+          </div>
+          <div *ngIf="error" class="alert alert-danger mt-4 rounded-3 small">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

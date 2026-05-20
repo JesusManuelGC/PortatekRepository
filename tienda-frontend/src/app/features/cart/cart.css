@@ -1,0 +1,42 @@
+.table-responsive {
+  border-radius: 1rem;
+}
+
+.table thead th {
+  border-bottom: 2px solid #2d372d;
+  color: #96f500;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #2d372d;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(150, 245, 0, 0.05);
+}
+
+.boton-blanco {
+  background: #1f2b1f;
+  border: 1px solid #2d372d;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+}
+
+.boton-blanco:hover {
+  background: #2d372d;
+  color: #96f500;
+}
+
+.card-summary {
+  background: #212529;
+  color: white;
+  border-radius: 1.5rem;
+}
+
+.imagen-miniatura-producto {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

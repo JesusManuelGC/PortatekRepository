@@ -1,0 +1,51 @@
+<app-header></app-header>
+<app-notifications></app-notifications>
+
+<div class="sidebar-overlay"></div>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h5 class="mb-0">{{ 'nav.productos' | translate }}</h5>
+    <button class="btn-close btn-close-white"></button>
+  </div>
+  <div class="sidebar-content">
+    <div class="accordion" id="categoriasAccordion">
+      <div class="accordion-item" *ngFor="let categoria of categorias">
+        <h2 class="accordion-header">
+          <button 
+            class="accordion-button collapsed" 
+            type="button" 
+            (click)="toggleCategoria(categoria.valor)"
+          >
+            <i class="bi {{ categoria.icono }} me-2"></i>
+            {{ categoria.nombreKey | translate }}
+          </button>
+        </h2>
+        <div 
+          class="accordion-collapse collapse" 
+          [class.show]="categoriasAbiertas[categoria.valor]"
+        >
+          <div class="accordion-body p-0">
+            <ul class="list-unstyled">
+              <li *ngFor="let tipo of categoria.tipos">
+                <a 
+                  class="sidebar-tipo-link" 
+                  [routerLink]="['/productos/tipo', tipo.valor]"
+                >
+                  {{ tipo.nombreKey | translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<main class="flex-shrink-0 min-vh-100 principal-aplicacion">
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
+

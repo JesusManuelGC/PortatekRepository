@@ -1,0 +1,15 @@
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.card.tarjeta-factura {
+  background: linear-gradient(180deg, #121a12 0%, #0c120c 100%);
+  border: 1px solid rgba(150, 245, 0, 0.3);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 0 14px rgba(150, 245, 0, 0.14);
+}
+
+.card.tarjeta-factura .encabezado-tabla-factura th {
+  border-bottom: 1px solid rgba(150, 245, 0, 0.18);
+  color: #b7c3b7;
+}

@@ -1,0 +1,29 @@
+.toast-container {
+  z-index: 2000;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.toast-container .toast {
+  border-radius: 0.8rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-weight: 500;
+}
+
+.toast-container .bg-success {
+  background-color: #198754;
+}
+
+.toast-container .bg-danger {
+  background-color: #dc3545;
+}
+
+.toast-container .bg-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.toast-container .bg-info {
+  background-color: #0dcaf0;
+}

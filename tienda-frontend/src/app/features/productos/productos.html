@@ -1,0 +1,54 @@
+<div class="container my-4 contenedor-inicio">
+  <section class="panel-heroe mb-5">
+    <div class="brillo-heroe"></div>
+    <h1 class="titulo-heroe">{{ 'productos.titulo' | translate }}</h1>
+    <p class="subtitulo-heroe mb-0">
+      {{ 'productos.subtitulo' | translate }}
+    </p>
+  </section>
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">{{ getTituloCategoria() }}</h2>
+    <a *ngIf="isAdmin()" class="btn btn-primary" routerLink="/admin/productos">
+      <i class="bi bi-plus-lg me-2"></i>{{ 'adminProductos.nuevoProducto' | translate }}
+    </a>
+  </div>
+
+  <div *ngIf="!loggedIn" class="alert alert-warning border-0 shadow-sm">
+    {{ 'productos.iniciaSesionRequerido' | translate }}
+    <a routerLink="/login" class="ms-2 fw-bold text-decoration-none">{{ 'productos.irALogin' | translate }}</a>
+  </div>
+
+  <div class="row g-4" *ngIf="loggedIn && productos.length > 0; else noProducts">
+    <div class="col-md-4" *ngFor="let producto of productos">
+      <a [routerLink]="['/producto', producto.codProducto]" class="text-decoration-none">
+        <div class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden cursor-pointer">
+          <div class="contenedor-imagen-producto">
+            <img [src]="getImageUrl(producto.imagen)" class="card-img-top" [alt]="producto.descripcion">
+          </div>
+          <div class="card-body producto-principal">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge tipo-producto rounded-pill">{{ producto.tipoProducto }}</span>
+              <span class="small" [ngClass]="producto.stock < 10 ? 'text-danger' : 'text-success'">{{ 'productos.stock' | translate }}: {{ producto.stock }}</span>
+            </div>
+            <h5 class="card-title fw-bold">{{ producto.descripcion }}</h5>
+          </div>
+          <div class="card-footer pie-producto d-flex justify-content-between align-items-center">
+            <span class="h4 mb-0 fw-bold precio-producto">{{ producto.precioUnitario }} €</span>
+            <button 
+              class="btn btn-dark btn-sm rounded-circle p-2" 
+              [disabled]="producto.stock === 0"
+              (click)="$event.stopPropagation(); addToCart(producto)"
+            >
+              <i class="bi bi-cart-plus h5 mb-0"></i>
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <ng-template #noProducts>
+    <p class="text-muted" *ngIf="loggedIn">{{ 'productos.noProductos' | translate }}</p>
+  </ng-template>
+</div>

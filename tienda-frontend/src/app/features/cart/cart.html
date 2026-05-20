@@ -1,0 +1,92 @@
+<div class="container my-5">
+  <h2 class="fw-bold mb-4 text-white">{{ 'cart.titulo' | translate }}</h2>
+  
+  <div class="row" *ngIf="items.length > 0; else emptyCart">
+    <div class="col-lg-8">
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-dark text-white">
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead class="text-white-50 small text-uppercase">
+              <tr>
+                <th>{{ 'cart.producto' | translate }}</th>
+                <th class="text-center">{{ 'cart.cantidad' | translate }}</th>
+                <th class="text-end">{{ 'cart.subtotal' | translate }}</th>
+                <th class="text-end"></th>
+              </tr>
+            </thead>
+            <tbody class="text-white">
+              <tr *ngFor="let item of items">
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img [src]="getImageUrl(item.producto.imagen)" class="rounded-3 shadow-sm me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                    <div>
+                      <h6 class="mb-0 fw-bold text-white">{{ item.producto.descripcion }}</h6>
+                      <p class="small text-white-50 mb-0">{{ item.producto.precioUnitario }} € c/u</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="input-group input-group-sm w-auto d-inline-flex border rounded-3 p-1" style="background: #1f2b1f;">
+                    <button 
+                      class="btn btn-sm boton-blanco border-0" 
+                      (click)="updateQuantity(item, -1)"
+                      [disabled]="item.cantidad <= 1"
+                    ><i class="bi bi-dash"></i></button>
+                    <span class="px-3 fw-bold">{{ item.cantidad }}</span>
+                    <button 
+                      class="btn btn-sm boton-blanco border-0" 
+                      (click)="updateQuantity(item, 1)"
+                      [disabled]="item.producto.stock != null && item.cantidad >= item.producto.stock"
+                    ><i class="bi bi-plus"></i></button>
+                  </div>
+                </td>
+                <td class="text-end fw-bold text-primary">{{ item.producto.precioUnitario * item.cantidad }} €</td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-outline-danger border-0 rounded-circle" (click)="removeItem(item.producto.codProducto!)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark text-white">
+        <h5 class="fw-bold mb-4">{{ 'cart.resumen' | translate }}</h5>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-white-50 small">{{ 'cart.subtotal' | translate }}:</span>
+          <span class="fw-bold">{{ total }} €</span>
+        </div>
+        <div class="d-flex justify-content-between mb-4 pb-4 border-bottom border-secondary">
+          <span class="text-white-50 small">{{ 'cart.envío' | translate }}:</span>
+          <span class="text-success small fw-bold">{{ 'cart.gratis' | translate }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-5 h4">
+          <span class="fw-bold">{{ 'cart.totalPrecio' | translate }}:</span>
+          <span class="fw-bold text-primary">{{ total }} €</span>
+        </div>
+        <button 
+          class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm" 
+          (click)="checkout()" 
+          [disabled]="loading || !canCheckout()"
+        >
+          <span *ngIf="!loading">{{ 'cart.finalizarPedido' | translate }}</span>
+          <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"></span>
+        </button>
+        <button class="btn btn-link text-white-50 w-100 mt-3 small text-decoration-none" routerLink="/">{{ 'cart.seguirComprando' | translate }}</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="text-center py-5">
+      <div class="display-1 text-white-50 opacity-25 mb-4"><i class="bi bi-cart-x"></i></div>
+      <h3 class="fw-bold text-white">{{ 'cart.vacío' | translate }}</h3>
+      <p class="text-white-50 mb-4">{{ 'cart.mensajeVacío' | translate }}</p>
+      <button class="btn btn-primary rounded-pill px-5 py-3 fw-bold shadow-sm" routerLink="/">{{ 'cart.explorarProductos' | translate }}</button>
+    </div>
+  </ng-template>
+</div>

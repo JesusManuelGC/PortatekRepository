@@ -1,0 +1,28 @@
+<div class="container my-4 contenedor-inicio">
+  <section class="panel-heroe panel-heroe--promo mb-4">
+    <div class="brillo-heroe"></div>
+    <div class="rejilla-heroe">
+      <div>
+        <div class="destacados-heroe mb-4">
+          {{ 'home.destacados' | translate }}
+        </div>
+
+        <h1 class="titulo-heroe mb-2">{{ 'home.titulo' | translate }}</h1>
+        <p class="subtitulo-heroe mb-3">
+          {{ 'home.subtitulo' | translate }}
+        </p>
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a class="btn btn-outline-light rounded-3 px-5 py-3 fw-bold" routerLink="/productos/componente">
+            <i class="bi bi-cpu me-2"></i>{{ 'home.componentes' | translate }}
+          </a>
+          <a class="btn btn-outline-light rounded-3 px-5 py-3 fw-bold" routerLink="/productos/ordenador">
+            <i class="bi bi-pc-display me-2"></i>{{ 'home.ordenadores' | translate }}
+          </a>
+          <a class="btn btn-outline-light rounded-3 px-5 py-3 fw-bold" routerLink="/productos/periférico">
+            <i class="bi bi-keyboard me-2"></i>{{ 'home.perifericos' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

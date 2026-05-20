@@ -1,0 +1,80 @@
+.navbar {
+  margin-top: 0.85rem;
+  background: rgba(6, 10, 6, 0.92);
+  border: 1px solid rgba(150, 245, 0, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #96f500;
+  letter-spacing: 0.3px;
+}
+
+.envoltura-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contenedor-logo {
+  width: 20%;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.logo-imagen {
+
+  height: 35%;
+  width: 100%;
+  margin-top: -10.5%;
+  margin-bottom: -10.5%;
+  object-fit: contain;
+}
+
+.texto-marca {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #96f500;
+}
+
+.nav-link {
+  color: #c5d0c5;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #96f500;
+  text-shadow: 0 0 12px rgba(150, 245, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bi-cart {
+  font-size: 1.2rem;
+}
+
+.badge {
+  font-size: 0.65rem;
+  padding: 0.25em 0.5em;
+}
+
+.btn-outline-light {
+  border-color: #96f500;
+  color: #96f500;
+}
+
+.btn-outline-light:hover {
+  background-color: #96f500;
+  border-color: #96f500;
+  color: #121212;
+}
+
+@media (max-width: 991px) {}

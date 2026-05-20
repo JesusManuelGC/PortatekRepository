@@ -1,0 +1,10 @@
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.pie-sitio {
+  background: rgba(6, 10, 6, 0.9);
+  border-top: 1px solid rgba(150, 245, 0, 0.28);
+  color: #d5dfd5;
+}

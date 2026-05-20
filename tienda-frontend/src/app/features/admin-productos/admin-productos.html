@@ -1,0 +1,120 @@
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <h2 class="fw-bold mb-0">{{ 'adminProductos.titulo' | translate }}</h2>
+    <button class="btn btn-primary rounded-3 px-4 py-2 fw-bold shadow-sm" (click)="openModal()">
+      <i class="bi bi-plus-lg me-2"></i> {{ 'adminProductos.nuevoProducto' | translate }}
+    </button>
+  </div>
+
+  <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="small text-uppercase">
+          <tr>
+            <th class="px-4 py-3">{{ 'adminProductos.id' | translate }}</th>
+            <th class="py-3">{{ 'adminProductos.imagen' | translate }}</th>
+            <th class="py-3">{{ 'adminProductos.descripcion' | translate }}</th>
+            <th class="py-3 text-center">{{ 'adminProductos.tipo' | translate }}</th>
+            <th class="py-3 text-center">{{ 'adminProductos.stock' | translate }}</th>
+            <th class="py-3 text-end">{{ 'adminProductos.precio' | translate }}</th>
+            <th class="px-4 py-3 text-end">{{ 'adminProductos.acciones' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of productos" class="border-bottom">
+            <td class="px-4 small">#{{ p.codProducto }}</td>
+            <td>
+              <img [src]="getImageUrl(p.imagen)" class="rounded-2 shadow-sm" style="width: 50px; height: 50px; object-fit: cover;">
+            </td>
+            <td>
+              <div class="fw-bold">{{ p.descripcion }}</div>
+            </td>
+            <td class="text-center">
+              <span>{{ p.tipoProducto }}</span>
+            </td>
+            <td class="text-center">
+              <span class="fw-bold">{{ p.stock }}</span>
+            </td>
+            <td class="text-end fw-bold">{{ p.precioUnitario }} €</td>
+            <td class="px-4 text-end">
+              <div class="btn-group shadow-sm rounded-3 overflow-hidden">
+                <button class="btn boton-blanco btn-sm px-3 py-2" (click)="editProducto(p)">
+                  <i class="bi bi-pencil text-primary"></i>
+                </button>
+                <button class="btn boton-blanco btn-sm px-3 py-2" (click)="deleteProducto(p.codProducto!)">
+                  <i class="bi bi-trash text-danger"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="productoModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold">{{ editing ? 'adminProductos.editarProducto' : 'adminProductos.nuevoProducto' | translate }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form (ngSubmit)="saveProducto()">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">{{ 'adminProductos.descripcion' | translate }}</label>
+            <input type="text" class="form-control" [(ngModel)]="currentProducto.descripcion" name="descripcion" required>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label small fw-bold">{{ 'adminProductos.categoria' | translate }}</label>
+              <select class="form-select" [(ngModel)]="currentProducto.categoriaProducto" name="categoriaProducto" required>
+                <option value="componente">{{ 'sidebar.componentes' | translate }}</option>
+                <option value="ordenador">{{ 'sidebar.ordenadores' | translate }}</option>
+                <option value="periférico">{{ 'sidebar.perifericos' | translate }}</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label small fw-bold">{{ 'adminProductos.tipo' | translate }}</label>
+              <select class="form-select" [(ngModel)]="currentProducto.tipoProducto" name="tipoProducto" required>
+                <option value="placa base">{{ 'sidebar.placaBase' | translate }}</option>
+                <option value="tarjeta gráfica">{{ 'sidebar.tarjetaGrafica' | translate }}</option>
+                <option value="procesador">{{ 'sidebar.procesador' | translate }}</option>
+                <option value="disco duro">{{ 'sidebar.discoDuro' | translate }}</option>
+                <option value="refrigeración">{{ 'sidebar.refrigeracion' | translate }}</option>
+                <option value="ram">{{ 'sidebar.ram' | translate }}</option>
+                <option value="torre/caja PC">{{ 'sidebar.torreCaja' | translate }}</option>
+                <option value="fuente de alimentación">{{ 'sidebar.fuenteAlimentacion' | translate }}</option>
+                <option value="PC sobremesa">{{ 'sidebar.pcSobremesa' | translate }}</option>
+                <option value="portátil">{{ 'sidebar.portatil' | translate }}</option>
+                <option value="monitor">{{ 'sidebar.monitor' | translate }}</option>
+                <option value="teclado">{{ 'sidebar.teclado' | translate }}</option>
+                <option value="ratón">{{ 'sidebar.raton' | translate }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label small fw-bold">{{ 'adminProductos.precio' | translate }}</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
+                <input type="number" class="form-control" [(ngModel)]="currentProducto.precioUnitario" name="precioUnitario" required>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">{{ 'adminProductos.stock' | translate }}</label>
+            <input type="number" class="form-control" [(ngModel)]="currentProducto.stock" name="stock" required>
+          </div>
+          <div class="mb-4">
+            <label class="form-label small fw-bold">{{ 'adminProductos.imagen' | translate }}</label>
+            <input type="file" class="form-control" (change)="onFileSelected($event)">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm mt-2">{{ 'adminProductos.guardar' | translate }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

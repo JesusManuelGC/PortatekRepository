@@ -1,0 +1,105 @@
+:root {
+  --bg-primary: #060a06;
+  --bg-secondary: #0b130b;
+  --surface: #111a11;
+  --surface-soft: #1a241a;
+  --neon: #96f500;
+  --neon-soft: #7ed321;
+  --text-primary: #e8efe8;
+  --text-muted: #9ea89e;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(126, 211, 33, 0.2), transparent 35%),
+    linear-gradient(160deg, var(--bg-primary) 0%, #050705 45%, #0c120c 100%);
+  color: var(--text-primary);
+}
+
+/* Mejora de contraste global para tema oscuro */
+h1, h2, h3, h4, h5, h6,
+p, span, label, small,
+td, th, li, strong {
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--neon);
+}
+
+a:hover {
+  color: #b5ff49;
+}
+
+/* Sobrescribe utilidades que suelen dejar texto oscuro */
+.text-dark,
+.text-black,
+.text-body,
+.text-body-emphasis {
+  color: #edf5ed;
+}
+
+.text-muted,
+.text-secondary {
+  color: #b5c0b5;
+}
+
+.bg-light,
+.bg-white,
+.table-light {
+  background-color: #1b241b;
+  color: #edf5ed;
+}
+
+.card,
+.table,
+.table thead th,
+.table tbody td,
+.modal-content,
+.form-control,
+.form-select,
+.input-group-text {
+  color: #edf5ed;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: #1d271d;
+  border-color: rgba(150, 245, 0, 0.22);
+}
+
+.form-control::placeholder {
+  color: #aab5aa;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: #edf5ed;
+  --bs-table-striped-color: #edf5ed;
+  --bs-table-striped-bg: rgba(150, 245, 0, 0.04);
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg: rgba(150, 245, 0, 0.08);
+}
+
+.principal-aplicacion {
+  background: transparent;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.btn-primary {
+  background-color: var(--neon-soft);
+  border-color: var(--neon-soft);
+  color: #111;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: var(--neon);
+  border-color: var(--neon);
+  color: #111;
+}

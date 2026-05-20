@@ -1,0 +1,179 @@
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --bg-light: #f8f9fa;
+  --bg-dark: #212529;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--bg-dark);
+}
+
+.navbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+
+.card:hover .contenedor-imagen-producto img {
+  transform: scale(1.1);
+}
+
+.principal-aplicacion {
+  /* Nueva clase en español */
+}
+
+.contenedor-imagen-producto {
+  height: 250px;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-imagen-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.btn-primary {
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+}
+
+.table thead th {
+  border-top: none;
+  font-weight: 600;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100%;
+  background: linear-gradient(180deg, #121912 0%, #0d130d 100%);
+  z-index: 1050;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(150, 245, 0, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h5 {
+  color: #e8efe8;
+  font-weight: 700;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.sidebar .accordion-item {
+  background: transparent;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .accordion-button {
+  background: transparent;
+  color: #e8efe8;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 1px solid rgba(150, 245, 0, 0.15);
+}
+
+.sidebar .accordion-button:hover {
+  background: rgba(150, 245, 0, 0.05);
+}
+
+.sidebar .accordion-button:not(.collapsed) {
+  background: rgba(150, 245, 0, 0.1);
+  color: #e8efe8;
+  box-shadow: none;
+}
+
+.sidebar .accordion-button::after {
+  filter: invert(1) brightness(1.5);
+}
+
+.sidebar .accordion-body {
+  background: transparent;
+  padding: 0.5rem 0;
+}
+
+.sidebar-tipo-link {
+  display: block;
+  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  color: #b7c3b7;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-tipo-link:hover {
+  background: rgba(150, 245, 0, 0.08);
+  color: #e8efe8;
+}
+
+.sidebar .accordion-collapse {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+.sidebar .accordion-collapse.show {
+  height: auto;
+  overflow: visible;
+}

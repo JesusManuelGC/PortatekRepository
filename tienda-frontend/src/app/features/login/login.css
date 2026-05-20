@@ -1,0 +1,53 @@
+.card {
+  border-radius: 1.5rem;
+}
+
+.card.tarjeta-login {
+  background: linear-gradient(180deg, #121a12 0%, #0c120c 100%);
+  border: 1px solid rgba(150, 245, 0, 0.3);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 0 14px rgba(150, 245, 0, 0.14);
+}
+
+.card.tarjeta-login > .encabezado-tarjeta-login {
+  background: rgba(6, 10, 6, 0.92);
+  border-bottom: 1px solid rgba(150, 245, 0, 0.25);
+}
+
+.subtitulo-login {
+  color: #b7c3b7;
+}
+
+.input-group-text {
+  border: none;
+  background-color: #192419;
+  padding-left: 1.25rem;
+}
+
+.input-group-text i {
+  color: #96f500;
+}
+
+.form-control {
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  background-color: #1f2b1f;
+}
+
+.form-control::placeholder {
+  color: #6b7a6b;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: #1f2b1f;
+  color: #ffffff;
+}
+
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(150, 245, 0, 0.22);
+}
