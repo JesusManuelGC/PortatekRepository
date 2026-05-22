@@ -114,17 +114,14 @@ public class AuthService {
             user.setPassword(""); // Oauth no necesita pass
             user.setEnabled(true);
             
-            Role userRole = roleRepository.findByName("USER").orElseGet(() -> {
-                Role r = new Role("USER");
-                return roleRepository.save(r);
-            });
+            Role userRole = roleRepository.findByName("ROLE_USER").orElseGet(() ->
+                    roleRepository.save(new Role("ROLE_USER")));
             user.setRoles(Collections.singleton(userRole));
             user = userRepository.save(user);
         }
 
         List<String> roles = user.getRoles().stream()
                 .map(Role::getName)
-                .map(r -> "ROLE_" + r)
                 .collect(Collectors.toList());
 
         String jwtToken = jwtUtil.generateToken(user.getUsername(), roles, user.getCodUsuario());

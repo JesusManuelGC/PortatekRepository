@@ -83,6 +83,7 @@
     "ciudad": "Ciudad",
     "numCalle": "Número de calle",
     "usuario": "Usuario",
+    "email": "Correo electrónico",
     "contraseña": "Contraseña",
     "registrarse": "Registrarse",
     "yaTienesCuenta": "¿Ya tienes cuenta?",
@@ -143,7 +144,12 @@
     "raton": "Ratón"
   },
   "footer": {
-    "derechosReservados": "© 2026 Tienda de Informática. Todos los derechos reservados."
+    "razonSocial": "Portatek Informática S.L.",
+    "cif": "CIF: B29587461",
+    "direccion": "Avda. de la Ingeniudad, Parcelas 14-16",
+    "poligono": "Polígono Industrial El Rosado",
+    "codigoPostal": "29520",
+    "ciudad": "Fuengirola"
   },
   "error404": {
     "titulo": "404 - Página no encontrada",

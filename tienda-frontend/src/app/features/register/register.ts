@@ -17,6 +17,7 @@ import { TranslatePipe } from '../../shared/translate.pipe';
 export class RegisterComponent {
   userData = {
     username: '',
+    email: '',
     password: '',
     nombre: '',
     dni: '',

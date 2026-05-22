@@ -83,6 +83,7 @@
     "ciudad": "City",
     "numCalle": "Street Number",
     "usuario": "Username",
+    "email": "Email",
     "contraseña": "Password",
     "registrarse": "Register",
     "yaTienesCuenta": "Already have an account?",
@@ -143,7 +144,12 @@
     "raton": "Mouse"
   },
   "footer": {
-    "derechosReservados": "© 2026 Computer Store. All rights reserved."
+    "razonSocial": "Portatek Informatics S.L.",
+    "cif": "Tax ID (CIF): B29587461",
+    "direccion": "Ingenity Avenue, Plots 14-16",
+    "poligono": "El Rosado Industrial Estate",
+    "codigoPostal": "29520",
+    "ciudad": "Fuengirola"
   },
   "error404": {
     "titulo": "404 - Page Not Found",
